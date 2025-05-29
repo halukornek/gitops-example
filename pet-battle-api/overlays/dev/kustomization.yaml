@@ -1,7 +1,7 @@
 resources:
   - ../../base
 
-namespace: stream-appdev-dev
+namespace: pet-battle-api-dev
 
 images:
   - name: 'registry.access.redhat.com/ubi9/openjdk-17-runtime'
