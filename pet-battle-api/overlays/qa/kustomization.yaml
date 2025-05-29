@@ -5,7 +5,7 @@ namespace: pet-battle-api-qa
 
 images:
   - name: 'registry.access.redhat.com/ubi9/openjdk-17-runtime'
-    newTag: 1.4.19
+    newTag: latest
 
 patches:
   - path: deployment.yaml
