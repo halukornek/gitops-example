@@ -1,0 +1,7 @@
+apiVersion: "pipelinesascode.tekton.dev/v1alpha1"
+kind: Repository
+metadata:
+  name: helloworld
+  namespace: helloworld-cicd
+spec:
+  url: "https://github.com/halukornek/helloworld"

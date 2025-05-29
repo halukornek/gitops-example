@@ -1,0 +1,12 @@
+resources:
+  - ../../base
+
+namespace: helloworld-qa
+
+#images:
+#  - name: 'docker.mozzartio.com:5000/ocp-hr-omega-service'
+#    newTag: 1.4.19
+
+patches:
+  - path: deployment.yaml
+

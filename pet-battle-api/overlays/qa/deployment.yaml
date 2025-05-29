@@ -1,7 +1,0 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: pet-battle-api
-spec:
-  replicas: 2
-  

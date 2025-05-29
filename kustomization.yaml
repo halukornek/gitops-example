@@ -1,4 +1,4 @@
 resources:
-  - pet-battle-api/overlays/qa
-  - pet-battle-api/overlays/dev
-  - pet-battle-api/repository.yaml
+  - helloworld/overlays/qa
+  - helloworld/overlays/dev
+  - helloworld/repository.yaml

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: helloworld
+    app.kubernetes.io/component: helloworld
+    app.kubernetes.io/instance: helloworld
+  name: helloworld
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      deployment: helloworld
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        deployment: helloworld
+        app: helloworld
+    spec:
+      containers:
+      - image: 'quay.io/halukornek/helloworld:0.0.1'
+        name: service
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources: {}

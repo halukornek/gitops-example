@@ -1,0 +1,8 @@
+resources:
+  - ../../base
+
+namespace: helloworld-dev
+
+#images:
+#  - name: 'quay.io/halukornek/helloworld'
+#    newTag: 1.4.9

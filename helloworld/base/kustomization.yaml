@@ -2,10 +2,5 @@ resources:
   - deployment.yaml
   - service.yaml
 
-configMapGenerator:
-  - name: pet-battle-api-config
-    files: 
-    - logback-spring.xml
-
 generatorOptions:
     disableNameSuffixHash: false
