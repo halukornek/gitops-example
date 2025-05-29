@@ -2,7 +2,7 @@ apiVersion: "pipelinesascode.tekton.dev/v1alpha1"
 kind: Repository
 metadata:
   name: pet-battle-api
-  namespace: stream-appdev-cicd
+  namespace: pet-battle-api-ci-cd
 spec:
   url: "https://git.mozzartio.com/ocp/pet-battle-api-service"
   git_provider:
