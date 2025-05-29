@@ -31,9 +31,6 @@ spec:
           value: /var/log/mozzart-service
         - name: SPRING_PROFILES_ACTIVE
           value: default
-        envFrom:
-        - secretRef:
-            name: pet-battle-api-profile
         resources: {}
         volumeMounts: 
           - mountPath: /var/log/mozzart-service
