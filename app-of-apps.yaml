@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     path: .
-    repoURL: https://git.mozzartio.com/ocp/gitops-appdev.git
+    repoURL: https://github.com/halukornek/gitops-example
     targetRevision: master
   destination:
     namespace: pet-battle-api-ci-cd
