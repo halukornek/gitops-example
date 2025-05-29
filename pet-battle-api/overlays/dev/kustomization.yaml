@@ -1,20 +1,11 @@
 resources:
   - ../../base
-  - ../../../global-config/dev
 
 namespace: stream-appdev-dev
 
 images:
-  - name: 'docker.mozzartio.com:5000/ocp-pet-battle-api-service'
+  - name: 'registry.access.redhat.com/ubi9/openjdk-17-runtime'
     newTag: 1.4.19
 
 patches:
-  - patch: |-
-      - op: replace
-        path: "/spec/template/spec/containers/0/env/1"
-        value:
-          name: SPRING_PROFILES_ACTIVE
-          value: "development"
-    target:
-      kind: Deployment
-      name: pet-battle-api
+  - path: deployment.yaml

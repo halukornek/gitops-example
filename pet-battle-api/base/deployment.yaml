@@ -19,7 +19,7 @@ spec:
         app: pet-battle-api
     spec:
       containers:
-      - image: 'docker.mozzartio.com:5000/ocp-pet-battle-api-service:latest'
+      - image: 'registry.access.redhat.com/ubi9/openjdk-17-runtime:latest'
         name: service
         ports:
         - containerPort: 8080
@@ -41,15 +41,9 @@ spec:
           - mountPath: /app/resources/logback-spring.xml
             subPath: logback-spring.xml
             name: config
-          - mountPath: /app/resources/development.properties
-            subPath: config.properties
-            name: global-config
       volumes: 
         - name: logs
           emptyDir: {}
         - name: config 
           configMap: 
             name: pet-battle-api-config
-        - name: global-config
-          configMap: 
-            name: global-config

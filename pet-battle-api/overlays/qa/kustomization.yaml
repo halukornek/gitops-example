@@ -4,7 +4,7 @@ resources:
 namespace: stream-appdev-qa
 
 images:
-  - name: 'docker.mozzartio.com:5000/ocp-pet-battle-api-service'
+  - name: 'registry.access.redhat.com/ubi9/openjdk-17-runtime'
     newTag: 1.4.19
 
 patches:

@@ -1,5 +1,4 @@
 resources:
   - pet-battle-api/overlays/qa
   - pet-battle-api/overlays/dev
-  - pet-battle-api/overlays/arch
   - pet-battle-api/repository.yaml
