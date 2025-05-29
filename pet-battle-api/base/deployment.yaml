@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: pet-battle-api
+    app.kubernetes.io/component: pet-battle-api
+    app.kubernetes.io/instance: pet-battle-api
+  name: pet-battle-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      deployment: pet-battle-api
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        deployment: pet-battle-api
+        app: pet-battle-api
+    spec:
+      containers:
+      - image: 'docker.mozzartio.com:5000/ocp-pet-battle-api-service:latest'
+        name: service
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        - containerPort: 28089
+          protocol: TCP
+        env:
+        - name: LOGGING_FILE_PATH
+          value: /var/log/mozzart-service
+        - name: SPRING_PROFILES_ACTIVE
+          value: default
+        envFrom:
+        - secretRef:
+            name: pet-battle-api-profile
+        resources: {}
+        volumeMounts: 
+          - mountPath: /var/log/mozzart-service
+            name: logs
+          - mountPath: /app/resources/logback-spring.xml
+            subPath: logback-spring.xml
+            name: config
+          - mountPath: /app/resources/development.properties
+            subPath: config.properties
+            name: global-config
+      volumes: 
+        - name: logs
+          emptyDir: {}
+        - name: config 
+          configMap: 
+            name: pet-battle-api-config
+        - name: global-config
+          configMap: 
+            name: global-config

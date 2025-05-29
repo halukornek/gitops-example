@@ -1,0 +1,18 @@
+apiVersion: "pipelinesascode.tekton.dev/v1alpha1"
+kind: Repository
+metadata:
+  name: pet-battle-api
+  namespace: stream-appdev-cicd
+spec:
+  url: "https://git.mozzartio.com/ocp/pet-battle-api-service"
+  git_provider:
+    # Set the url when using a private GitLab instance
+    url: "https://git.mozzartio.com"
+    secret:
+      name: "gitlab-webhook-config"
+      # Set this if you have a different key in your secret
+      # key: "provider.token"
+    webhook_secret:
+      name: "gitlab-webhook-config"
+      # Set this if you have a different key in your secret
+      # key: "webhook.secret"

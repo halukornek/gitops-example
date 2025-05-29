@@ -1,0 +1,12 @@
+resources:
+  - ../../base
+
+namespace: stream-appdev-qa
+
+images:
+  - name: 'docker.mozzartio.com:5000/ocp-pet-battle-api-service'
+    newTag: 1.4.19
+
+patches:
+  - path: deployment.yaml
+

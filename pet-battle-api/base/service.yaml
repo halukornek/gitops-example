@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: pet-battle-api
+    app.kubernetes.io/component: pet-battle-api
+    app.kubernetes.io/instance: pet-battle-api
+  name: pet-battle-api
+spec:
+  ports:
+  - name: 8080-tcp
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  - name: 8089-tcp
+    port: 8089
+    protocol: TCP
+    targetPort: 28089
+  selector:
+    deployment: pet-battle-api

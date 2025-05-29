@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-of-apps
+  namespace: pet-battle-api-ci-cd
+spec:
+  project: default
+  source:
+    path: .
+    repoURL: https://git.mozzartio.com/ocp/gitops-appdev.git
+    targetRevision: master
+  destination:
+    namespace: pet-battle-api-ci-cd
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
